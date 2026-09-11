@@ -45,14 +45,16 @@ jobs:
       - name: Install UiPath CLI
         shell: pwsh
         run: |
-          dotnet tool install --global UiPath.CLI.Windows 
+          npm install -g @uipath/cli
+          uip tools install @uipath/rpa-tool 
+          #dotnet tool install --global UiPath.CLI.Windows 
 
       # Step 4: Validate and Analyze the project (Optional but recommended)
       - name: Validate UiPath Project
         shell: pwsh
         run: |
-          uipcli rpa validate --projectPath "."
-
+         # uipcli rpa validate --projectPath "."
+            uip rpa validate --projectPath "${{github.workspace}}"
       # Step 5: Pack the project into a Nuget package (.nupkg)
       # Uses the unique run number to dynamically version the package output
       - name: Pack UiPath Project
