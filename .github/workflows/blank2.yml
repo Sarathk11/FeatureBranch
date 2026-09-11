@@ -45,7 +45,7 @@ jobs:
       - name: Install UiPath CLI
         shell: pwsh
         run: |
-          dotnet tool install -g UiPath.CLI.Windows 
+          dotnet tool install --global UiPath.CLI.Windows 
 
       # Step 4: Validate and Analyze the project (Optional but recommended)
       - name: Validate UiPath Project
