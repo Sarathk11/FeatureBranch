@@ -53,8 +53,7 @@ jobs:
       - name: Validate UiPath Project
         shell: pwsh
         run: |
-         # uipcli rpa validate --projectPath "."
-            uip rpa validate --projectPath "${{github.workspace}}"
+             uip rpa-legacy validate "."
       # Step 5: Pack the project into a Nuget package (.nupkg)
       # Uses the unique run number to dynamically version the package output
       - name: Pack UiPath Project
