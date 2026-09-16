@@ -61,7 +61,7 @@ jobs:
         shell: pwsh
         run: |
           mkdir output
-          uip rpa pack "." "./output" --package-version "1.0.${{ github.run_number }}"
+          uip rpa pack "." "../output" --package-version "1.0.${{ github.run_number }}"
 
       # Step 6: Deploy the built artifact to the target Orchestrator folder
       - name: Deploy to UiPath Orchestrator
